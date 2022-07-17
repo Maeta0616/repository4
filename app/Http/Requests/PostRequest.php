@@ -18,11 +18,11 @@ class PostRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules()//規則を決める関数
     {
         return [
-            'post.title' => 'required|string|max:100',
+            'post.title' => 'required|string|max:100',//post.title←.でつなぐ
             'post.body' => 'required|string|max:4000',
-        ];//titleとbodyのルールを定義した。required=入力義務、string=
+        ];//titleとbodyのルールを定義した。required=入力義務、string=文字制限
     }
 }

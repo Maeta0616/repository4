@@ -22,7 +22,7 @@
             @endforeach
         </div>
         <div class='paginate'>
-            {{$posts->links()}}
+            {{$posts->links()}}//←PostControllerのindex関数内で定義されている//
         </div>
     </body>
 </html

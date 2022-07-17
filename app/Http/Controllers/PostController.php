@@ -8,7 +8,7 @@ use App\Http\Requests\PostRequest;//PostRequestをuseする
 class PostController extends Controller
 {
     //post一覧を表示する//
-     public function index(Post $post)
+     public function index(Post $post)//index関数に入る前に引数としてPostクラスを$postとしてインスタンス化して渡す//
       {
        return view('index')->with(['posts' => $post->getPaginateByLimit()]);
       }
@@ -26,7 +26,7 @@ class PostController extends Controller
       {
         $input = $request['post'];
         $post->fill($input)->save();//SQLのInsert構文と等しい//
-        return redirect('/posts/' . $post->id);
+        return redirect('/posts/' . $post->id);//redirect=ユーザーを自動的に指定のURLに誘導するための関数
         
       }
 }
