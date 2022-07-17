@@ -29,4 +29,15 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);//redirect=ユーザーを自動的に指定のURLに誘導するための関数
         
       }
+      public function edit(Post $post)//関数に引数がなくても（）が必要
+      {
+        return view('posts/edit')->with(['post'=>$post]);
+      }
+      public function update(PostRequest $request, Post $post)
+      {
+        $input_post = $request['post'];
+        $post->fill($input_post)->save();
+
+        return redirect('/posts/' . $post->id);
+      }
 }

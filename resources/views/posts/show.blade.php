@@ -12,6 +12,7 @@
         <h1 class="title">
             {{ $post->title }}
         </h1>
+        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>//show.blade.phpに作っておくことで詳細画面から編集できるようにする//
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
