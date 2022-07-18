@@ -16,6 +16,11 @@
                 <div class='post'>
                     <h2 class='title'>
                          <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+    　　　　　　　　　　　　　　　　　　　　@csrf
+   　　　　　　　　　　     　　　　　　　　　　 @method('DELETE')
+                            <button type="btn" onclick="return confirm('本当に削除？')">delete</button>
+                            </form>
                     </h2>
                     <p class='body'>{{ $post->body }}</p>
                 </div>

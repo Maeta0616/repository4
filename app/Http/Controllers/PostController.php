@@ -40,4 +40,10 @@ class PostController extends Controller
 
         return redirect('/posts/' . $post->id);
       }
+      
+      public function destroy(Post $post)
+      {
+        $post->delete();//SQLでdelete文が削除される
+        return redirect('/');
+      }
 }
