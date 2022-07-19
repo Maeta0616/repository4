@@ -8,16 +8,29 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+
+        <p class='create'>
+            [<a href='/posts/create'>create</a>]
+        </p>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
-                    <h2 class='title'>{{ $post->title }}</h2>
+                    <h2 class='title'>
+                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+    　　　　　　　　　　　　　　　　　　　　@csrf
+   　　　　　　　　　　     　　　　　　　　　　 @method('DELETE')
+                            <button type="btn" onclick="return confirm('本当に削除？')">delete</button>
+                            </form>
+                    </h2>
+
                     <p class='body'>{{ $post->body }}</p>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
-            {{$posts->links()}}
+            {{$posts->links()}}//←PostControllerのindex関数内で定義されている//
+
         </div>
     </body>
 </html
