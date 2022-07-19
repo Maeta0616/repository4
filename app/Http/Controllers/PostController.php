@@ -46,4 +46,5 @@ class PostController extends Controller
         $post->delete();//SQLでdelete文が削除される
         return redirect('/');
       }
+
 }

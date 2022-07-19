@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //「/posts」となっているのは各ファイルがpostsディレクトリ内にあるから
 Route::get('/', 'PostController@index');
 //ホームページを表示するだけなので('/'だけになるのは当然//

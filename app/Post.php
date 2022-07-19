@@ -19,6 +19,7 @@ class Post extends Model
     }
     
     
+
 }
 
 //このファイルは直接Datebaseにアクセスしてる//

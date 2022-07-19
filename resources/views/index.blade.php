@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+
         <p class='create'>
             [<a href='/posts/create'>create</a>]
         </p>
@@ -22,12 +23,14 @@
                             <button type="btn" onclick="return confirm('本当に削除？')">delete</button>
                             </form>
                     </h2>
+
                     <p class='body'>{{ $post->body }}</p>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{$posts->links()}}//←PostControllerのindex関数内で定義されている//
+
         </div>
     </body>
 </html
