@@ -25,3 +25,5 @@ Route::put('/posts/{post}','PostController@update');
 //{post}=IDが渡ってくる//
 //IDを指定して情報を更新するので/{post}が必要となる//
 Route::delete('/posts/{post}','PostController@destroy');
+
+Route::get('/categories/{category}', 'CategoryController@index');

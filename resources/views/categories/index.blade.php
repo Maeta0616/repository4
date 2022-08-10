@@ -24,10 +24,11 @@
                     </h2>
                     <p class='body'>{{ $post->body }}</p>
                 </div>
+                <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             @endforeach
         </div>
         <div class='paginate'>
             {{$posts->links()}}//←PostControllerのindex関数内で定義されている//
         </div>
     </body>
-</html
+</html>

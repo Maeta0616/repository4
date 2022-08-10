@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
 use App\Http\Requests\PostRequest;//PostRequestをuseする
 
 class PostController extends Controller
@@ -16,9 +17,10 @@ class PostController extends Controller
       {
         return view('posts/show')->with(['post'=>$post]);
       }
-      public function create()//関数は引数がなくても()が必要
+  
+      public function create(Category $category)
       {
-        return view('posts/create');
+        return view('posts/create')->with(['categories'=>$category->get()]);;
       }
       public function store(PostRequest $request, Post $post)//PostはDBにアクセスするため//
       //PostRequestクラスはControllerクラスが元々保有しているクラスで$requestでインスタンス化//
