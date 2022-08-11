@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware'=>['auth']],function(){
 //「/posts」となっているのは各ファイルがpostsディレクトリ内にあるから
 Route::get('/', 'PostController@index');
 //ホームページを表示するだけなので('/'だけになるのは当然//
@@ -25,5 +26,8 @@ Route::put('/posts/{post}','PostController@update');
 //{post}=IDが渡ってくる//
 //IDを指定して情報を更新するので/{post}が必要となる//
 Route::delete('/posts/{post}','PostController@destroy');
-
+});
 Route::get('/categories/{category}', 'CategoryController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
